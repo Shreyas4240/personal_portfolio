@@ -307,11 +307,11 @@ export default function Home() {
               SB
             </div>
             {isHydrated && (
-              <ul className="flex gap-8 font-medium">
+              <ul className="flex flex-wrap gap-6 md:gap-8 font-medium justify-end">
                 {['Home', 'Projects', 'Skills', 'Resume', 'Contact'].map((item, i) => (
                   <li key={item} style={{ animation: `fadeIn 0.8s ease-out ${i * 0.1}s forwards`, opacity: 0 }}>
-                    <a 
-                      href={`#${item.toLowerCase()}`} 
+                    <a
+                      href={`#${item === "Projects" ? "experience" : item.toLowerCase()}`}
                       className="relative text-gray-300 hover:text-white transition-colors duration-300 group"
                     >
                       {item}
