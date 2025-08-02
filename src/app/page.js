@@ -65,6 +65,31 @@ function SkillCube({ skill, index }) {
     setIsDragging(false)
   }
 
+  // Touch event handlers for mobile
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    const touch = e.touches[0];
+    lastMousePos.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - lastMousePos.current.x;
+    const deltaY = touch.clientY - lastMousePos.current.y;
+
+    setRotation((prev) => ({
+      x: prev.x + deltaY * 0.5,
+      y: prev.y + deltaX * 0.5,
+    }));
+
+    lastMousePos.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
   useEffect(() => {
     if (isDragging) {
       document.addEventListener('mousemove', handleMouseMove)
@@ -92,6 +117,9 @@ function SkillCube({ skill, index }) {
           transformStyle: 'preserve-3d'
         }}
         onMouseDown={handleMouseDown}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         {/* Cube faces */}
         {[
@@ -139,6 +167,7 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("hero")
   const [isScrolled, setIsScrolled] = useState(false)
   const [isHydrated, setIsHydrated] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -307,19 +336,46 @@ export default function Home() {
               SB
             </div>
             {isHydrated && (
-              <ul className="flex flex-wrap gap-6 md:gap-8 font-medium justify-end">
-                {['Home', 'Projects', 'Skills', 'Resume', 'Contact'].map((item, i) => (
-                  <li key={item} style={{ animation: `fadeIn 0.8s ease-out ${i * 0.1}s forwards`, opacity: 0 }}>
-                    <a
-                      href={`#${item === "Projects" ? "experience" : item.toLowerCase()}`}
-                      className="relative text-gray-300 hover:text-white transition-colors duration-300 group"
-                    >
-                      {item}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-gray-300 group-hover:w-full transition-all duration-300"></span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <>
+                {/* Hamburger button for mobile */}
+                <button
+                  className="md:hidden text-gray-300 hover:text-white focus:outline-none"
+                  onClick={() => setShowMenu(!showMenu)}
+                  aria-label="Toggle menu"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+                {/* Nav list: responsive */}
+                <ul className={`mt-4 md:mt-0 ${showMenu ? 'flex' : 'hidden'} flex-col md:flex md:flex-row gap-4 md:gap-8 font-medium justify-end bg-gray-900/95 md:bg-transparent rounded-lg md:rounded-none p-4 md:p-0 absolute md:static top-full left-0 w-full md:w-auto shadow-lg md:shadow-none transition-all duration-200`}
+                  style={{ zIndex: 100 }}
+                >
+                  {['Home', 'Projects', 'Skills', 'Resume', 'Contact'].map((item, i) => (
+                    <li key={item} style={{ animation: `fadeIn 0.8s ease-out ${i * 0.1}s forwards`, opacity: 0 }}>
+                      <a
+                        href={`#${item === "Projects" ? "experience" : item.toLowerCase()}`}
+                        className="relative text-gray-300 hover:text-white transition-colors duration-300 group"
+                        onClick={() => setShowMenu(false)}
+                      >
+                        {item}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-white to-gray-300 group-hover:w-full transition-all duration-300"></span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
             )}
           </div>
         </div>
