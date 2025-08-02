@@ -369,7 +369,7 @@ export default function Home() {
               About Me
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed">
-              I'm a passionate high school student who loves building tools that solve real problems. Whether it's automating club workflows, helping others learn, or exploring new tech stacks, I’m driven by curiosity and impact. Beyond code, I enjoy cricket, mentoring peers, and constantly learning new things.
+              I&apos;m a passionate high school student who loves building tools that solve real problems. Whether it&apos;s automating club workflows, helping others learn, or exploring new tech stacks, I&apos;m driven by curiosity and impact. Beyond code, I enjoy cricket, mentoring peers, and constantly learning new things.
             </p>
           </div>
         </section>
@@ -482,7 +482,7 @@ export default function Home() {
                 Let's Connect
               </h2>
               <p className="text-xl text-gray-400 mb-12">
-                I'm always open to discussing new opportunities
+                I&apos;m always open to discussing new opportunities
               </p>
               
               <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
