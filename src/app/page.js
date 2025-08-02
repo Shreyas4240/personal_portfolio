@@ -483,7 +483,7 @@ export default function Home() {
               </h2>
               <p className="text-xl text-gray-400 mb-12">
                 I&apos;m always open to discussing new opportunities
-              </p>
+              </p> 
               
               <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
                 <a 
