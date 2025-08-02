@@ -479,7 +479,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <div>
               <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                Let's Connect
+                Let&apos;s Connect
               </h2>
               <p className="text-xl text-gray-400 mb-12">
                 I&apos;m always open to discussing new opportunities
