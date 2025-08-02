@@ -4,8 +4,9 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useState, useEffect, useRef } from "react"
-import { SiHtml5, SiJavascript, SiReact, SiNodedotjs, SiPython, SiTailwindcss, SiDocker } from "react-icons/si";
+import { SiHtml5, SiJavascript, SiReact, SiNodedotjs, SiPython, SiTailwindcss, SiDocker, SiGithub } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+import { PiLink } from "react-icons/pi";
 
 const getSkillIcon = (name) => {
   switch (name) {
@@ -171,7 +172,7 @@ export default function Home() {
       desc: "Image-to-LaTeX tool using FastAPI + KaTeX, deployed as a microservice. Integrated with Vibe for screenshot recognition.",
       tech: ["FastAPI", "KaTeX", "Python", "Microservices"],
       logo: "https://i.imgur.com/04g9rum.png",
-      link: "https://github.com/shreyasbhaskar/pix2tex"
+      link: "https://github.com/Shreyas4240/imagetolatex"
     },
     {
       year: "July 2025",
@@ -195,7 +196,7 @@ export default function Home() {
       desc: "Co-founded Vibe, a free resource platform for AP/IB students at The Village School. Developed a 6-lesson ACT course with concept breakdowns, practice sets, and study plans. Recruited 15+ tutors to produce subject-specific videos and host monthly Q&As. Built and deployed a subject-specific chatbot using FastAPI (Python) with KaTeX, Markdown, and Tesseract.js on the frontend.",
       tech: ["Tesseract.js", "Markdown", "KaTeX", "JavaScript"],
       logo: "https://i.imgur.com/Dx4Cubv.png",
-      link: "https://github.com/shreyasbhaskar/vibe-chatbot"
+      link: "https://www.vikinginitiative.com/"
     },
     {
       year: "August 2025",
@@ -405,6 +406,28 @@ export default function Home() {
                         </a>
                       ) : (
                         <h3 className="text-xl font-bold text-white">{entry.title}</h3>
+                      )}
+                      {(entry.title === "Vibe") && entry.link && (
+                        <a
+                          href={entry.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-gray-400 hover:text-blue-400 flex items-center gap-1 mt-1"
+                        >
+                          <PiLink className="w-4 h-4" />
+                          Visit Website
+                        </a>
+                      )}
+                      {(entry.title !== "Vibe" && entry.title !== "SWE Intern at The /Nudge Institute" && entry.title !== "Strike Email Sender" && entry.title !== "Honor Societies Attendance + Dues Tracker") && entry.link && (
+                        <a
+                          href={entry.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-gray-400 hover:text-blue-400 flex items-center gap-1 mt-1"
+                        >
+                          <SiGithub className="w-4 h-4" />
+                          Visit GitHub
+                        </a>
                       )}
                       <div className="text-sm text-gray-400 mt-1">{entry.year}</div>
                     </div>
