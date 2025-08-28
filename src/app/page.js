@@ -209,7 +209,6 @@ export default function Home() {
       desc: "Developed an end-to-end grant proposal curation tool for The/Nudge Institute. Built a front-end interface (HTML/CSS/JS) for customizing proposals to new foundations. Engineered Python scripts to scrape foundation data, recommend aligned Nudge programs, and auto-generate proposals using LLMs via the Together API. Implemented multi-step prompting to extract relevant focus areas and generate tailored proposals using foundation info, old drafts, and new templates.",
       tech: ["Prompt Engineering", "BeautifulSoup", "Python", "Workflow Automation"],
       logo: "https://i.imgur.com/J2GJlB6.jpeg",
-      link: "https://github.com/shreyasbhaskar/pix2tex"
     },
     {
       year: "August 2025",
@@ -217,7 +216,6 @@ export default function Home() {
       desc: "Email reminders with Google Apps Script and Sheets for Village Tutoring Club.",
       tech: ["Google Apps Script", "Google Sheets", "JavaScript", "Workflow Automation"],
       logo: "https://i.imgur.com/YW8BEBA.png",
-      link: "https://github.com/shreyasbhaskar/strike-email-sender"
     },
     {
       year: "June 2025",
@@ -233,7 +231,6 @@ export default function Home() {
       desc: "Used Canvas LMS API to track attendance and dues for honor societies, with Google Sheets integration.",
       tech: ["Canvas API", "Google Sheets", "Python", "Data Tracking", "Workflow Automation"],
       logo: "https://i.imgur.com/JR7eTDe.png",
-      link: "https://github.com/shreyasbhaskar/honor-societies-tracker"
     },
   ].sort((a, b) => parseDate(b.year) - parseDate(a.year));
 
@@ -399,7 +396,7 @@ export default function Home() {
             </div>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 font-light animate-fade-in" style={{ animationDelay: '0.4s', opacity: 0 }}>
-              Problem Solver • Full Stack Developer • Cricket Enthusiast
+              Automation • Web Dev • AI • Cricket Enthusiast 
             </p>
             
             <div className="flex gap-4 justify-center flex-wrap animate-fade-in" style={{ animationDelay: '0.8s', opacity: 0 }}>
@@ -420,18 +417,18 @@ export default function Home() {
         </section>
 
         {/* ABOUT ME SECTION */}
-        <section id="about" className="py-20 px-6 bg-gray-900/40">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              About Me
-            </h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              I&apos;m a passionate high school student who loves building tools that solve real problems. Whether it&apos;s automating club workflows, helping others learn, or exploring new tech stacks, I&apos;m driven by curiosity and impact. Beyond code, I enjoy cricket, mentoring peers, and constantly learning new things.
-            </p>
-          </div>
-        </section>
+          <section id="about" className="py-20 px-6 bg-gray-900/40">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                About Me
+              </h2>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                Hey there! I&#39;m Shreyas, an IB student at the Village High School. I&#39;ve always had a passion for automating and optimizing workflows in creative and lasting ways. In the future, I&#39;m interested in delving into how to create and categorize artificial intelligence by looking at our existing infrastructure &mdash; the human brain, modeling real life interactions with math, and watching lots of cricket.
+              </p>
+            </div>
+          </section>
 
-        {/* EXPERIENCE & PROJECTS TIMELINE */}
+          {/* EXPERIENCE & PROJECTS TIMELINE */}
         <section id="experience" className="py-20 px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
@@ -539,9 +536,6 @@ export default function Home() {
               <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 Resume
               </h2>
-              <p className="text-xl text-gray-400 mb-8">
-                Download my resume to learn more about my experience
-              </p>
               <a 
                 href="/resume.pdf" 
                 target="_blank"
@@ -558,10 +552,10 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <div>
               <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                Let&apos;s Connect
+                Contact Me 
               </h2>
               <p className="text-xl text-gray-400 mb-12">
-                I&apos;m always open to discussing new opportunities
+                Ready for any cs/ai/engineering projects/internships!
               </p> 
               
               <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
