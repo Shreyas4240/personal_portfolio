@@ -232,6 +232,14 @@ export default function Home() {
       tech: ["Canvas API", "Google Sheets", "Python", "Data Tracking", "Workflow Automation"],
       logo: "https://i.imgur.com/JR7eTDe.png",
     },
+        {
+      year: "September 2025",
+      title: "BrainViz",
+      desc: "Built an interactive 3D brain visualization by mapping GLTF model meshes to anatomical regions and developing Python functions to highlight specific areas and simulate common neural pathways. Integrated a chatbot to interpret user queries and connect them to relevant brain regions within the visualization.",
+      tech: ["Three.js", "Python", "Docker", "JavaScript"],
+      logo: "https://i.imgur.com/TvO6GcY.png",
+      link: "https://brain-replica-343465419360.us-central1.run.app/"
+    },
   ].sort((a, b) => parseDate(b.year) - parseDate(a.year));
 
   const skills = [
@@ -460,7 +468,7 @@ export default function Home() {
                       ) : (
                         <h3 className="text-xl font-bold text-white">{entry.title}</h3>
                       )}
-                      {(entry.title === "Vibe") && entry.link && (
+                      {(entry.title === "Vibe" || entry.title === "BrainViz") && entry.link && (
                         <a
                           href={entry.link}
                           target="_blank"
@@ -471,7 +479,7 @@ export default function Home() {
                           Visit Website
                         </a>
                       )}
-                      {(entry.title !== "Vibe" && entry.title !== "SWE Intern at The /Nudge Institute" && entry.title !== "Strike Email Sender" && entry.title !== "Honor Societies Attendance + Dues Tracker") && entry.link && (
+                      {(entry.title !== "Vibe" && entry.title !== "SWE Intern at The /Nudge Institute" && entry.title !== "Strike Email Sender" && entry.title !== "Honor Societies Attendance + Dues Tracker" && entry.title !== "BrainViz") && entry.link && (
                         <a
                           href={entry.link}
                           target="_blank"
@@ -501,7 +509,12 @@ export default function Home() {
                   {entry.logo && (
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                       <div className="timeline-logo-container">
-                        <img src={entry.logo} alt={`${entry.title} logo`} className="timeline-logo-img" referrerPolicy="no-referrer" />
+                        <img
+                          src={entry.logo}
+                          alt={`${entry.title} logo`}
+                          className={`timeline-logo-img${entry.title === "BrainViz" ? " bg-black" : ""}`}
+                          referrerPolicy="no-referrer"
+                        />
                       </div>
                     </div>
                   )}
