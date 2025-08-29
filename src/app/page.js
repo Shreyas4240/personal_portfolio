@@ -7,6 +7,8 @@ import { useState, useEffect, useRef } from "react"
 import { SiHtml5, SiJavascript, SiReact, SiNodedotjs, SiPython, SiTailwindcss, SiDocker, SiGithub } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { PiLink } from "react-icons/pi";
+import GitHubContributionChart from "./GitHubContributionChart";
+
 
 const getSkillIcon = (name) => {
   switch (name) {
@@ -525,6 +527,16 @@ export default function Home() {
         </section>
 
         {/* Removed Projects section: now merged into timeline above */}
+
+        {/* GITHUB CONTRIBUTION CHART SECTION */}
+        <div className="max-w-6xl mx-auto my-24 px-6">
+          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent text-center">
+            Contributions
+          </h2>
+          <div className="bg-gray-900/60 rounded-2xl p-6 shadow-lg border border-gray-700/40">
+            <GitHubContributionChart />
+          </div>
+        </div>
 
         {/* SKILLS SECTION */}
         <section id="skills" className="py-20 px-6 bg-gray-800/30">
